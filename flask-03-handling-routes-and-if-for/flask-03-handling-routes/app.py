@@ -36,8 +36,8 @@ def admin():
 
 # Create a function named greet which return formatted inline html string 
 # and assign to the dynamic route of ('/<name>')
-@app.route('/<name>')
-def greet(name):
+# @app.route('/<name>')
+# def greet(name):
     greet_format=f"""
 <!DOCTYPE html>
 <html>
@@ -57,9 +57,9 @@ def greet(name):
 
 # Create a function named greet_admin which redirect the request to the hello path with param of 'Master Admin!!!!' 
 # and assign to the route of ('/greet-admin')
-@app.route('/greet-admin')
-def greet_admin():
-    return redirect(url_for('greet', name='Master Admin!!!!'))
+# @app.route('/greet-admin')
+# def greet_admin():
+#    return redirect(url_for('greet', name='Master Admin!!!!'))
 
 
 
@@ -69,9 +69,9 @@ def greet_admin():
 # Please find a template html file named `greet.html` which takes `name` as parameter under `templates` folder 
 
 
-# @app.route('/<name>')
-# def greet(name):
-#     return render_template('greet.html', name=name)
+@app.route('/<name>')
+def greet(name):
+    return render_template('greet.html', name=name)
 
 
 
